@@ -15,7 +15,7 @@ const rest = new REST({ version: '10' }).setToken(token);
 (async () => {
     try {
         console.log('Started refreshing application (/) commands.');
-        await rest.put(Routes.applicationCommands('1258133824018186372'), { body: commands });
+        await rest.put(Routes.applicationCommands(process.env.CLIENT_ID), { body: commands });
         console.log('Successfully reloaded application (/) commands.');
     } catch (error) {
         console.error("error occurred in adding commands",error);
